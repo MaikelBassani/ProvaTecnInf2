@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ArtesMarciais.Models.Aluno>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<center><h2>Alunos</h2></center>
+@if (@Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Faixa</th>
+                <th>Tipo de Associação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alunos in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(@alunos.nome, "Details", new { alunos.id })</td>
+                    <td>@alunos.cpf</td>
+                    <td>@alunos.faixa.nome</td>
+                    <td>@alunos.TipodeAssociacao.nome</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Não possui nenhum aluno cadastrado.</p>
+}

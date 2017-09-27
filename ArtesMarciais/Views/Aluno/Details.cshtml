@@ -1,0 +1,12 @@
+﻿@model ArtesMarciais.Models.Aluno
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nome: @Model.nome</h2>
+<h2>CPF: @Model.cpf</h2>
+<h2>Faixa: @Model.faixa.nome</h2>
+<h2>Associacao: @Model.TipodeAssociacao.nome</h2>
+
+
